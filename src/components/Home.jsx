@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Home = () => {
 
@@ -17,7 +18,7 @@ const Home = () => {
   };
   return (
     <div className="bg-gradient-to-r from-black via-gray-900 to-black h-screen flex items-center justify-center text-white relative overflow-hidden">
-      
+
       {/* Neon Background Effect */}
       {/* <div className="absolute inset-0 bg-blue-900 opacity-20 blur-3xl"> hii</div> */}
 
@@ -32,8 +33,8 @@ const Home = () => {
       </div>
 
       {/* Profile Image with Glow Effect */}
-      <img 
-        src="./src/components/sanskar.jpg" 
+      <img
+        src="./src/components/sanskar.jpg"
         className="absolute right-32 top-1/2 transform -translate-y-1/2 w-96 h-96 object-cover rounded-full border-4 border-blue-500 shadow-lg shadow-blue-500/50 transition-transform hover:scale-105 hover:shadow-blue-400/80"
         alt="Sanskar Kanade"
       />
@@ -42,20 +43,29 @@ const Home = () => {
       <div className="absolute top-10 left-10 w-40 h-40 bg-blue-500 rounded-full opacity-20 blur-3xl animate-pulse"></div>
       <div className="absolute bottom-10 right-10 w-32 h-32 bg-purple-500 rounded-full opacity-20 blur-3xl animate-pulse"></div>
 
-      {/* Other components*/ }
-      <div className="flex bottom-28 left-10 absolute gap-5">
-      {['Home', 'About Me', 'Skills', 'Projects', 'Contact Me'].map((text, index) => (
-        <div
-          key={index}
-          className="h-40 w-32 rounded-2xl border-4 border-blue-500 flex justify-center items-center 
-                     text-purple-500 shadow-lg transition-transform duration-200"
+      {/* Other components*/}
+      <div className='flex bottom-28 left-10 absolute gap-5'>
+        <div className='h-40 w-32 rounded-2xl border-4 border-amber-400 flex justify-center items-center 
+                     bg-gray-800 text-white shadow-lg transition-transform duration-200'
           onMouseMove={(e) => handleMouseMove(e, e.currentTarget)}
-          onMouseLeave={(e) => handleMouseLeave(e.currentTarget)}
-        >
-          {text}
-        </div>
-      ))}
-    </div>
+          onMouseLeave={(e) => handleMouseLeave(e.currentTarget)}> <NavLink to="/">Home</NavLink></div>
+        <div className='h-40 w-32 rounded-2xl border-4 border-amber-400 flex justify-center items-center 
+                     bg-gray-800 text-white shadow-lg transition-transform duration-200'
+          onMouseMove={(e) => handleMouseMove(e, e.currentTarget)}
+          onMouseLeave={(e) => handleMouseLeave(e.currentTarget)}><NavLink to='/about'>About Me</NavLink></div>
+        <div className='h-40 w-32 rounded-2xl border-4 border-amber-400 flex justify-center items-center 
+                     bg-gray-800 text-white shadow-lg transition-transform duration-200'
+          onMouseMove={(e) => handleMouseMove(e, e.currentTarget)}
+          onMouseLeave={(e) => handleMouseLeave(e.currentTarget)}><NavLink to="/skill">Skills</NavLink></div>
+        <div className='h-40 w-32 rounded-2xl border-4 border-amber-400 flex justify-center items-center 
+                     bg-gray-800 text-white shadow-lg transition-transform duration-200'
+          onMouseMove={(e) => handleMouseMove(e, e.currentTarget)}
+          onMouseLeave={(e) => handleMouseLeave(e.currentTarget)}><NavLink to="/project">Projects</NavLink></div>
+        <div className='h-40 w-32 rounded-2xl border-4 border-amber-400 flex justify-center items-center 
+                     bg-gray-800 text-white shadow-lg transition-transform duration-200'
+          onMouseMove={(e) => handleMouseMove(e, e.currentTarget)}
+          onMouseLeave={(e) => handleMouseLeave(e.currentTarget)}><NavLink to="/contact">Contact Me</NavLink></div>
+      </div>
 
     </div>
   );
