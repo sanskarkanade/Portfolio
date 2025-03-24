@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const About = () => {
   return (
@@ -38,12 +39,12 @@ const About = () => {
         </p>
 
         <div className="flex justify-center mt-6">
-          <a
-            href="#contact"
+          <NavLink
+            to='/contact'
             className="bg-blue-600 hover:bg-blue-500 text-white font-medium px-6 py-3 rounded-lg shadow-md transition duration-300"
           >
             Let's Connect
-          </a>
+          </NavLink>
         </div>
       </div>
     </div>
