@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import Myimage from './sanskar.jpg'
 
 const Home = () => {
 
@@ -34,7 +35,7 @@ const Home = () => {
 
       {/* Profile Image with Glow Effect */}
       <img
-        src="./src/components/sanskar.jpg"
+        src={Myimage}
         className="absolute right-32 top-1/2 transform -translate-y-1/2 w-96 h-96 object-cover rounded-full border-4 border-blue-500 shadow-lg shadow-blue-500/50 transition-transform hover:scale-105 hover:shadow-blue-400/80"
         alt="Sanskar Kanade"
       />
