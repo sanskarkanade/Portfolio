@@ -30,16 +30,16 @@ const Contact = () => {
       <div className='flex flex-col items-center text-center md:items-start md:text-left gap-6 md:w-1/2'>
         <h1 className='text-5xl font-bold text-blue-400'>Connect With Me</h1>
         <div className='flex justify-center md:justify-start gap-6 text-4xl'>
-          <a href='#' className='hover:text-blue-500 transition duration-300'>
+          <a href='https://www.linkedin.com/in/sanskar-kanade-585805322?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app' className='hover:text-blue-500 transition duration-300'>
             <FaLinkedin />
           </a>
-          <a href='#' className='hover:text-gray-500 transition duration-300'>
+          <a href='https://github.com/sanskarkanade' className='hover:text-gray-500 transition duration-300'>
             <FaSquareGithub />
           </a>
-          <a href='#' className='hover:text-blue-400 transition duration-300'>
+          <a href='https://x.com/Sanskarkanade17?t=i5NsBVQpYgrWcmG0nO9SlQ&s=09' className='hover:text-blue-400 transition duration-300'>
             <FaTwitter />
           </a>
-          <a href='#' className='hover:text-pink-500 transition duration-300'>
+          <a href='https://www.instagram.com/sanskar_1776?igsh=MWV5azV2Y3Zuc2tmeQ==' className='hover:text-pink-500 transition duration-300'>
             <FaInstagram />
           </a>
         </div>
