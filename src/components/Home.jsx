@@ -1,73 +1,68 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import Myimage from './sanskar.jpg'
+import Myimage from './sanskar.jpg';
 
 const Home = () => {
-
   const handleMouseMove = (e, box) => {
     const rect = box.getBoundingClientRect();
     const x = (e.clientX - rect.left) / rect.width - 0.5;
     const y = (e.clientY - rect.top) / rect.height - 0.5;
-    const rotateX = -y * 50;
-    const rotateY = x * 50;
-
-    box.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    const rotateX = -y * 20;
+    const rotateY = x * 20;
+    box.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
   };
 
   const handleMouseLeave = (box) => {
-    box.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+    box.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg)';
   };
+
   return (
-    <div className="bg-gradient-to-r from-black via-gray-900 to-black h-screen flex items-center justify-center text-white relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black flex flex-col items-center justify-center px-6 text-white relative overflow-hidden">
+      {/* Background Blur Circles */}
+      <div className="absolute top-0 left-0 w-60 h-60 bg-purple-500 opacity-20 blur-3xl animate-pulse rounded-full"></div>
+      <div className="absolute bottom-0 right-0 w-40 h-40 bg-blue-500 opacity-20 blur-2xl animate-pulse rounded-full"></div>
 
-      {/* Neon Background Effect */}
-      {/* <div className="absolute inset-0 bg-blue-900 opacity-20 blur-3xl"> hii</div> */}
+      {/* Glassmorphism Card */}
+      <div className="w-full max-w-5xl bg-white/10 backdrop-blur-md rounded-xl border border-white/20 shadow-xl p-6 md:p-10 flex flex-col md:flex-row items-center gap-10 z-10">
+        {/* Image */}
+        <img
+          src={Myimage}
+          alt="Sanskar Kanade"
+          className="w-40 h-40 md:w-56 md:h-56 object-cover rounded-full border-4 border-purple-400 shadow-md transition hover:scale-105"
+        />
 
-      {/* Content Section */}
-      <div className="absolute left-20 top-1/3 transform -translate-y-1/2">
-        <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 animate-pulse">
-          Hey there! I'm Sanskar Kanade
-        </h1>
-        <p className="text-xl mt-4 text-gray-300">
-          A Computer Engineer exploring the world of <span className="text-blue-400 font-semibold">DevOps</span> & <span className="text-purple-400 font-semibold">Web Development</span>.
-        </p>
+        {/* Intro Text */}
+        <div className="text-center md:text-left">
+          <h1 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+            Hey there! I’m Sanskar Kanade
+          </h1>
+          <p className="mt-4 text-lg md:text-xl text-gray-300">
+            A Computer Engineer passionate about <span className="text-blue-400 font-semibold">DevOps</span> and <span className="text-purple-400 font-semibold">Web Development</span>.
+          </p>
+        </div>
       </div>
 
-      {/* Profile Image with Glow Effect */}
-      <img
-        src={Myimage}
-        className="absolute right-32 top-1/2 transform -translate-y-1/2 w-96 h-96 object-cover rounded-full border-4 border-blue-500 shadow-lg shadow-blue-500/50 transition-transform hover:scale-105 hover:shadow-blue-400/80"
-        alt="Sanskar Kanade"
-      />
-
-      {/* Floating Light Effects */}
-      <div className="absolute top-10 left-10 w-40 h-40 bg-blue-500 rounded-full opacity-20 blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-10 right-10 w-32 h-32 bg-purple-500 rounded-full opacity-20 blur-3xl animate-pulse"></div>
-
-      {/* Other components*/}
-      <div className='flex bottom-28 left-10 absolute gap-5'>
-        <div className='h-40 w-32 rounded-2xl border-4 border-amber-400 flex justify-center items-center 
-                     bg-gray-800 text-white shadow-lg transition-transform duration-200'
-          onMouseMove={(e) => handleMouseMove(e, e.currentTarget)}
-          onMouseLeave={(e) => handleMouseLeave(e.currentTarget)}> <NavLink to="/">Home</NavLink></div>
-        <div className='h-40 w-32 rounded-2xl border-4 border-amber-400 flex justify-center items-center 
-                     bg-gray-800 text-white shadow-lg transition-transform duration-200'
-          onMouseMove={(e) => handleMouseMove(e, e.currentTarget)}
-          onMouseLeave={(e) => handleMouseLeave(e.currentTarget)}><NavLink to='/about'>About Me</NavLink></div>
-        <div className='h-40 w-32 rounded-2xl border-4 border-amber-400 flex justify-center items-center 
-                     bg-gray-800 text-white shadow-lg transition-transform duration-200'
-          onMouseMove={(e) => handleMouseMove(e, e.currentTarget)}
-          onMouseLeave={(e) => handleMouseLeave(e.currentTarget)}><NavLink to="/skill">Skills</NavLink></div>
-        <div className='h-40 w-32 rounded-2xl border-4 border-amber-400 flex justify-center items-center 
-                     bg-gray-800 text-white shadow-lg transition-transform duration-200'
-          onMouseMove={(e) => handleMouseMove(e, e.currentTarget)}
-          onMouseLeave={(e) => handleMouseLeave(e.currentTarget)}><NavLink to="/project">Projects</NavLink></div>
-        <div className='h-40 w-32 rounded-2xl border-4 border-amber-400 flex justify-center items-center 
-                     bg-gray-800 text-white shadow-lg transition-transform duration-200'
-          onMouseMove={(e) => handleMouseMove(e, e.currentTarget)}
-          onMouseLeave={(e) => handleMouseLeave(e.currentTarget)}><NavLink to="/contact">Contact Me</NavLink></div>
+      {/* Navigation Buttons */}
+      <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 z-10">
+        {[
+          { to: '/', label: 'Home' },
+          { to: '/about', label: 'About Me' },
+          { to: '/skill', label: 'Skills' },
+          { to: '/project', label: 'Projects' },
+          { to: '/contact', label: 'Contact Me' },
+        ].map((item) => (
+          <div
+            key={item.to}
+            className="h-24 w-24 sm:h-28 sm:w-28 rounded-xl border border-amber-400 bg-white/10 backdrop-blur-md text-white font-semibold flex items-center justify-center text-center shadow-md hover:shadow-lg transition duration-300 hover:bg-white/20"
+            onMouseMove={(e) => handleMouseMove(e, e.currentTarget)}
+            onMouseLeave={(e) => handleMouseLeave(e.currentTarget)}
+          >
+            <NavLink to={item.to} className="w-full h-full flex items-center justify-center">
+              {item.label}
+            </NavLink>
+          </div>
+        ))}
       </div>
-
     </div>
   );
 };
