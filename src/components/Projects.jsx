@@ -2,36 +2,45 @@ import React from 'react';
 
 const projects = [
   {
-    title: 'ToDo List',
-    liveDemo: 'https://sanskarkanade.github.io/HTMLrepo/Todo%20list/',
-    github: 'https://github.com/sanskarkanade/HTMLrepo/tree/fd8ad96cca97d8e7ea18105d2041a46f13687fb3/Todo%20list',
-    technology : 'HTML, CSS, JS',
+    title: 'API Snap',
+    liveDemo: 'https://api-snap-sanskarkanades-projects.vercel.app/',
+    github: 'https://github.com/sanskarkanade/API-Snap',
+    technology: 'MERN Stack (MongoDB, Express.js, React, Node.js)',
   },
   {
-    title: 'Tik-Tac-Toe',
-    liveDemo: 'https://sanskarkanade.github.io/HTMLrepo/Tik-Tac-Toe/',
-    github: 'https://github.com/sanskarkanade/HTMLrepo/tree/fd8ad96cca97d8e7ea18105d2041a46f13687fb3/Tik-Tac-Toe',
-    technology : 'HTML, CSS, JS',
+    title: 'E-commerce',
+    liveDemo: 'https://e-commerce-poe9.vercel.app/',
+    github: 'https://github.com/sanskarkanade/E-commerce',
+    technology: 'MERN Stack (MongoDB, Express.js, React, Node.js, Tailwind CSS)',
   },
   {
     title: 'Weather App',
     liveDemo: 'https://sanskarkanade.github.io/HTMLrepo/Weather%20app/',
     github: 'https://github.com/sanskarkanade/HTMLrepo/tree/fd8ad96cca97d8e7ea18105d2041a46f13687fb3/Weather%20app',
-    technology : 'HTML, CSS, JS, OpenWeatherMap API',
+    technology: 'HTML, CSS, JS, OpenWeatherMap API',
   },
   {
-    title: 'E-commerce',
-    liveDemo: 'https://e-commerce-opal-delta-96.vercel.app/',
-    github: 'https://github.com/sanskarkanade/React/tree/203275eac719740d1937558b89752696d120e211/E-commerce',
-    technology : 'React + Tailwind CSS, Dummyjson API',
+    title: 'ToDo List',
+    liveDemo: 'https://sanskarkanade.github.io/HTMLrepo/Todo%20list/',
+    github: 'https://github.com/sanskarkanade/HTMLrepo/tree/fd8ad96cca97d8e7ea18105d2041a46f13687fb3/Todo%20list',
+    technology: 'HTML, CSS, JS',
   },
+  {
+    title: 'Tik-Tac-Toe',
+    liveDemo: 'https://sanskarkanade.github.io/HTMLrepo/Tik-Tac-Toe/',
+    github: 'https://github.com/sanskarkanade/HTMLrepo/tree/fd8ad96cca97d8e7ea18105d2041a46f13687fb3/Tik-Tac-Toe',
+    technology: 'HTML, CSS, JS',
+  },
+  
 ];
 
 const Projects = () => {
   return (
     <div className='min-h-screen bg-gradient-to-r from-black via-gray-900 to-black text-white py-16 px-6'>
-      <h1 className='text-4xl font-bold text-center mb-12 border-b-4 border-gray-700 inline-block mx-auto pb-2'>My Projects</h1>
-      
+      <h1 className='text-4xl font-bold text-center mb-12 border-b-4 border-gray-700 inline-block mx-auto pb-2'>
+        My Projects
+      </h1>
+
       <div className='grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8 max-w-6xl mx-auto'>
         {projects.map((project, index) => (
           <div
